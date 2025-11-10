@@ -1,62 +1,95 @@
 SaitScan
+> Full Passive Site Checker | بررسی‌کننده‌ی غیرفعال سایت
 
-یک اسکنر غیرفعال (GET-only) و سریع برای جمع‌آوری اطلاعات اولیه و تشخیص هئورستیک مشکلات رایج سایت. طراحی شده برای استفاده قانونی (مالکین یا تستر با اجازه).
+---
 
-قابلیت‌ها ♦
+## [i] Description | توضیحات
+A fast **passive (GET-only)** scanner for quick reconnaissance and heuristic checks of common web issues.  
+ابزاری سریع و غیرفعال (فقط GET) برای جمع‌آوری اطلاعات اولیه و تشخیص هئورستیک مشکلات متداول وب.
 
-🟢 Passive (GET-only) — هیچ اکسپلویتی اجرا نمی‌شود
+---
 
-⚡ Parallel checks (threads) — سریع و کم‌مصرف
+## [*] Features | قابلیت‌ها
+- Passive (GET-only) — no exploits run.  
+  غیرفعال (فقط GET) — هیچ اکسپلویتی اجرا نمی‌شود.
+- Parallel checks (threads) for speed.  
+  اجرای موازی با threads برای سرعت بالاتر.
+- Find common sensitive files: `.env`, `wp-config.php`, `.git/HEAD`.  
+  پیدا کردن فایل‌های حساس رایج.
+- Detect admin/login pages and password fields.  
+  تشخیص صفحات ادمین/ورود و بررسی وجود فیلد پسورد.
+- Check directory listing on common paths.  
+  بررسی directory listing در مسیرهای رایج.
+- Passive reflection & SQL-error heuristics.  
+  تست بازتاب پارامترها و علائم خطای SQL (هئورستیک).
+- Clean terminal output with `rich`.  
+  خروجی ترمینال مرتب با کتابخانه‌ی `rich`.
 
-🔍 پیدا کردن فایل‌های حساس (.env, wp-config.php, .git/HEAD)
+---
 
-🔐 تشخیص صفحات admin/login و وجود فیلد پسورد
+## [#] Requirements | پیش‌نیازها
+- Python 3.10+ (۳٫۱۰ به بالا)  
+- pip  
+- Python packages: `requests`, `rich`
 
-📁 بررسی directory listing
+Create `requirements.txt`:
 
-🧠 تست بازتاب پارامترها و علائم خطای SQL
+requests>=2.28 rich>=13.0
 
-🎨 خروجی ترمینال زیبا با rich
+---
 
+## [→] Installation | نصب
+```bash
+git clone https://github.com/mostafapanahi2009-star/<site_scan2.py>.git
+cd <site_scan2.py>
 
-پیش‌نیازها 📃
-
-Python 3.10+
-
-pip
-
-packages: requests, rich
-
-
-نصب و اجرا ⚙️
-
-git clone https://github.com/<mostafapanahi2009-star>/<>.git
-cd <repo>
+# optional virtual env
 python3 -m venv .venv
 source .venv/bin/activate
+
 pip install -r requirements.txt
-python3 Site_scan3.py
-
-استفاده از پروکسی 🔁
-
-برای پروکسی می‌توانی proxies.txt بسازی (هر خط: http://user:pass@host:port) و در safe_get() یا wrapper بخوانی تا استفاده کند.
 
 
-نکات مهم ⚠️
+---
 
-فقط روی سایت‌هایی که مالک‌ش هستی یا اجازه داری اجرا کن — اسکن بدون اجازه قانونی نیست.
+[!] Usage | اجرا
 
-ابزار Passive است؛ هدفش جمع‌آوری اطلاعات اولیه و آموزش است.
+Run the scanner (example):
+
+python3 site_scan2.py
+
+When prompted enter a domain or IP (e.g. example.com or 192.168.1.1).
+این برنامه از تو می‌پرسد که آیا مالک سایت هستی — حتماً تأیید کن تا ادامه بده.
 
 
-نویسنده / Authors ✍️
+---
 
-Mostafa.hk — @Mo303067
+[~] Proxy support | پشتیبانی پراکسی
 
+To use proxies, add a proxies.txt file in repo root (one http://user:pass@host:port per line) and adapt safe_get() to read/use them.
+برای پراکسی، فایل proxies.txt بساز و هر خط را شکل بالا قرار بده؛ سپس safe_get() را برای خواندن/استفاده از آن تغییر بده.
+
+
+---
+
+[⚖] Legal / Ethics | هشدار قانونی
+
+Only scan sites you own or have explicit permission to test. Unauthorized scanning may be illegal.
+فقط سایت‌هایی را اسکن کن که مالکش هستی یا اجازه صریح داری — اسکن بدون اجازه ممکن است قانونی نباشد.
+
+
+---
+
+[✍] Author | نویسنده
+
+Mostafa — mostafapanahi2009-star
+Contact: @Mo303067
+
+
+---
 
 License
 
-Recommend: MIT
+Recommended: MIT
 
-
-
+اگر می‌خوای همین فایل رو به‌صورت واقعی در مخزن ایجاد کنم یا اصلاحاتی مثل اضافه کردن لینک مستقیم به مخزن، مثال خروجی (screenshot/GIF) یا تغییر نام فایل اسکریپت انجام بدم، بگو تا ویرایش کنم.
