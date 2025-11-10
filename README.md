@@ -47,7 +47,7 @@ git clone https://github.com/mostafapanahi2009-star/Site_scan3.py.git
 cd Site_scan3.py
 
 pip install -r requirements.txt
-python3 site_scan2.py
+python3 Site_scan2.py
 
 
 ---
